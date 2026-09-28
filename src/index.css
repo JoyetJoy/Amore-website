@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #1f2937;
+    background-color: #ffffff;
+  }
+}
+
+.text-main {
+  color: #E91E63;
+}
+
+.bg-main {
+  background-color: #E91E63;
+}
+
+.font-yes {
+  font-family: 'Yesteryear', cursive;
+  font-weight: 400;
+}
+
+/* Reference site counter card design */
+.tf-counter-card {
+  background-color: #ffffff;
+  padding: 35px 20px;
+  border-radius: 23px;
+  box-shadow: 0 14px 40px 0 rgba(0, 0, 0, 0.04);
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 230px;
+  z-index: 1;
+}
+
+.tf-counter-card::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 92%;
+  border: 1px dashed rgba(0, 0, 0, 0.15);
+  border-radius: 18px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.tf-counter-card:hover::before,
+.tf-counter-card.active-card::before {
+  border: 1px dashed #D81B60;
+}
+
+.tf-counter-card .icon-wrap {
+  color: #FF970D;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.tf-counter-card .icon-wrap svg {
+  width: 45px;
+  height: 45px;
+  transition: all 0.5s ease;
+}
+
+.tf-counter-card:hover .icon-wrap svg {
+  transform: rotateY(180deg);
+}
+
